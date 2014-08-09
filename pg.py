@@ -144,6 +144,8 @@ def insertCurrencyList(data, withHistory=True):
 def _insertMarketCap(data, targetTable):
     """Insert market cap data (private)."""
     cursor = dictCursor()
+    if len(data) == 0:
+        return True
     fields = data[0].keys()
 
     # Create staging table
