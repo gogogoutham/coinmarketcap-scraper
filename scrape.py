@@ -1,4 +1,4 @@
-""" Core scraper for bitcointalk.org. """
+""" Core scraper for coinmarketcap.com. """
 import codecs
 import coinmarketcap
 from datetime import datetime
