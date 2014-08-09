@@ -59,7 +59,7 @@ def scrapeMarketCap(slug, numDays, includeVolume=False):
 logging.info("Attempting to scrape currency list...")
 currencies = scrapeCurrencyList()
 logging.info("Finished scraping currency list. Starting on currencies...")
-for currency in currencies[0:1]:
+for currency in currencies:
     logging.info(">Starting scrape of currency {0}...".format(
         currency['slug']))
     for lookback in lookbacks:
