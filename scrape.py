@@ -66,8 +66,19 @@ for currency in currencies:
         includeVolume = True if lookback == 365 else False
         logging.info(">>Starting scrape of lookback {0}...".format(
             lookback))
-        scrapeMarketCap(
-            currency['slug'], lookback, includeVolume=includeVolume)
+        try:
+            scrapeMarketCap(
+                currency['slug'], lookback, includeVolume=includeVolume)
+        except Exception as e:
+            print '-'*60
+            print "Could not scrape currency {0}, lookback {1}.".format(
+                currency['slug'], lookback)
+            print traceback.format_exc()
+            print '-'*60
+            logging.info(
+                ">>Could not scrape lookback {0}. Skipping.".format(
+                    lookback))
+            continue
         logging.info(">>Done with scrape of lookback {0}.".format(
             lookback))
     logging.info(">Done with scrape of currency {0}.".format(
