@@ -1,4 +1,4 @@
-""" Module for requesting data from bitcointalk.org and parsing it. """
+""" Module for requesting data from coinmarketcap.org and parsing it. """
 import codecs
 from datetime import datetime
 from datetime import time
